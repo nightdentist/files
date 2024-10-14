@@ -1,4 +1,6 @@
 import smtplib
+from login import login
+from login import password
 
 
 email_from = 'sasha_2014@mail.ru'
@@ -38,6 +40,6 @@ message = letter.replace('%my_name%', my_name)
 message = message.encode("UTF-8")
 
 server = smtplib.SMTP_SSL('smtp.mail.ru:465')
-server.login('login', 'password')
+server.login(login, password)
 server.sendmail(email_from, email_to, message)
 server.quit()
